@@ -2,7 +2,7 @@ import paramiko
 import os
 import requests
 deployment_url = os.environ["airflow_url"]
-dag_id = "Weather-Forecasting_sathushetty"
+dag_id = "wts_AnonAnon"
 response = requests.post(
     url=f"{deployment_url}/api/v1/dags/{dag_id}/dagRuns",
     auth=(os.environ['airflow_username'], os.environ['airflow_password']),
