@@ -47,5 +47,25 @@ def connect_to_mysql_and_extract_data():
             cursor.close()
             connection.close()
 
+def read_and_store_data():
+    try:
+        # Read the CSV file
+        df = pd.read_csv('testset.csv')
+
+        # Print the top 5 rows
+        print(df.head(5))
+
+        # Print success message
+        print("Data extraction successful")
+
+        # Store the dataframe to a CSV file
+        df.to_csv('data.csv', index=False)
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 # Call the function
-connect_to_mysql_and_extract_data()
+read_and_store_data()
+
+# # Call the function
+# connect_to_mysql_and_extract_data()
